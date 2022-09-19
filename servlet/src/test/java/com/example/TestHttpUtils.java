@@ -19,6 +19,7 @@ public class TestHttpUtils {
 
     public static HttpResponse<String> send(final String path) throws Exception {
         final var request = HttpRequest.newBuilder()
+                .GET()
                 .uri(URI.create("http://localhost:8080" + path))
                 .timeout(Duration.ofSeconds(3))
                 .build();
